@@ -1,0 +1,244 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local replacementAnimations = {
+    ["14798608838"] = "rbxassetid://17141153099",
+    ["12447247483"] = "rbxassetid://108974035701442",
+    ["12309835105"] = "rbxassetid://14721837245",
+    ["15957376722"] = "rbxassetid://17141153099"
+}
+
+local function onAnimationPlayed(animationTrack)
+    if player.Character and humanoid then
+        local animationId = animationTrack.Animation.AnimationId:match("%d+")
+        local replacementId = replacementAnimations[animationId]
+
+        if replacementId then
+            animationTrack:Stop()
+
+            local newAnimation = Instance.new("Animation")
+            newAnimation.AnimationId = replacementId
+            local newTrack = humanoid:LoadAnimation(newAnimation)
+            newTrack:Play()
+
+            if replacementId == "rbxassetid://Your id" then
+                wait(your start time)
+                
+                local Test = ((Here the path copy script))
+                local test = Test:Clone()
+                test.Parent = character.HumanoidRootPart
+
+                for _, child in ipairs(test:GetChildren()) do
+                    if child:IsA("ParticleEmitter") then
+                        child.Color = ColorSequence.new(Color3.new(0, 1, 1))
+                        child:Emit(15)
+                        child.Enabled = true
+                    end
+                end
+
+                wait(Your stop time)
+                test:Destroy()
+            end
+        end
+    end
+end
+if replacementId == "rbxassetid://108974035701442",
+then 
+           wait(1)
+           local Test = game.ReplicatedStorage.Resources.UFW.vfx.StarThing.background.Attachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = true
+    end
+end
+  wait(7)
+        test:Destroy
+end
+end
+end
+end
+
+humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+
+player.CharacterAdded:Connect(function(newCharacter)
+    character = newCharacter
+    humanoid = newCharacter:WaitForChild("Humanoid")
+    humanoid.AnimationPlayed:Connect(onAnimationPlayed)
+end)
+
+local Test = game.ReplicatedStorage.Emotes.DemonParticles.RootAttachment
+local test = Test:Clone()
+test.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+
+for _, child in ipairs(test:GetChildren()) do
+    if child:IsA("ParticleEmitter") then
+        child:Emit(15)
+        child.Enabled = true
+    end
+end
+
+local char = game.Players.LocalPlayer.Character
+ 
+getgenv().LArmCol = char['Left Arm'].ChildAdded:Connect(function(pp)
+    if pp.Name == 'WaterPalm' then
+        for i, v in pairs(pp:WaitForChild('ConstantEmit'):GetChildren()) do
+            v.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), 
+                ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))  
+            }
+        end
+ 
+        pp:WaitForChild('WaterTrail').Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0.00, Color3.fromRGB(153, 0, 153)), 
+            ColorSequenceKeypoint.new(1.00, Color3.fromRGB(153, 0, 153))  
+        }
+    end
+end)
+ 
+getgenv().CCol = char.ChildAdded:Connect(function(pp)
+    if pp.Name == 'Effects' then
+        for i = 1, 55 do
+            for i, v in pairs(pp:GetDescendants()) do
+                if v:IsA('ParticleEmitter') then 
+                    v.Color = ColorSequence.new{
+                        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 0)), 
+                        ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 0))  
+                    }
+                end
+            end
+            task.wait()
+        end
+    end
+end)
+ 
+getgenv().RArmCol = char['Right Arm'].ChildAdded:Connect(function(pp)
+    if pp.Name == 'WaterPalm' then
+        for i, v in pairs(pp:WaitForChild('ConstantEmit'):GetChildren()) do
+            v.Color = ColorSequence.new{
+                ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), 
+                ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))  
+            }
+        end
+ 
+        pp:WaitForChild('WaterTrail').Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)), 
+            ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 0, 0))  
+        }
+    end
+end)
+
+coroutine.wrap(function()
+    local ts = game:GetService("TweenService")
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+ 
+    local Dialogue = Instance.new("BillboardGui")
+    local Chat1 = Instance.new("Frame")
+    local Sub = Instance.new("TextLabel")
+ 
+    Dialogue.Active = true
+    Dialogue.Size = UDim2.new(15, 0, 15, 0)
+    Dialogue.StudsOffset = Vector3.new(0, 0, 2)
+    Dialogue.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Dialogue.Name = "Dialogue"
+    Dialogue.Parent = humanoidRootPart
+ 
+    Chat1.AnchorPoint = Vector2.new(0.5, 0.5)
+    Chat1.BackgroundColor3 = Color3.new(1, 1, 1)
+    Chat1.BorderColor3 = Color3.new(0, 0, 0)
+    Chat1.BorderSizePixel = 2
+    Chat1.Position = UDim2.new(0.600000024, 0, -0.2, 0)
+    Chat1.Size = UDim2.new(0.100000001, 0, 0.200000003, 0)
+    Chat1.Name = "Chat1"
+    Chat1.BackgroundTransparency = 1
+    Chat1.Parent = Dialogue
+ 
+    Sub.FontFace = Font.new("rbxassetid://12187375716", Enum.FontWeight.Bold, Enum.FontStyle.Italic)
+    Sub.Text = "Ill fucking kill you creatures!"
+    Sub.TextColor3 = Color3.new(0, 0, 0)
+    Sub.TextScaled = true
+    Sub.TextSize = 14
+    Sub.TextWrapped = true
+    Sub.AnchorPoint = Vector2.new(0.5, 0.5)
+    Sub.BackgroundColor3 = Color3.new(1, 1, 1)
+    Sub.TextTransparency = 1
+    Sub.BorderColor3 = Color3.new(0, 0, 0)
+    Sub.BorderSizePixel = 0
+    Sub.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Sub.Size = UDim2.new(0.850000024, 0, 0.349999994, 0)
+    Sub.Name = "Sub"
+    Sub.Parent = Chat1
+ 
+    game.Debris:AddItem(Chat1, 25)
+    game.Debris:AddItem(Sub, 25)
+ 
+    local function tweenProperty(object, properties, time)
+        local tweenInfo = TweenInfo.new(time, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tween = ts:Create(object, tweenInfo, properties)
+        tween:Play()
+        return tween
+    end
+ 
+    tweenProperty(Chat1, {BackgroundTransparency = 0}, 1)
+    tweenProperty(Sub, {TextTransparency = 0}, 1)
+    tweenProperty(Chat1, {Position = UDim2.new(0.6, 0, 0.4, 0)}, 1)
+    task.wait(4)
+    tweenProperty(Chat1, {BackgroundTransparency = 1}, 2)
+    tweenProperty(Sub, {TextTransparency = 1}, 2)
+end)()
+
+local player = game.Players.LocalPlayer
+local playerGui = player.PlayerGui
+local hotbar = playerGui:FindFirstChild("Hotbar")
+local backpack = hotbar:FindFirstChild("Backpack")
+local hotbarFrame = backpack:FindFirstChild("Hotbar")
+
+-- Button 1
+local baseButton1 = hotbarFrame:FindFirstChild("1").Base
+local ToolName1 = baseButton1.ToolName
+ToolName1.Text = "malevolent Rush"
+
+-- Button 2
+local baseButton2 = hotbarFrame:FindFirstChild("2").Base
+local ToolName2 = baseButton2.ToolName
+ToolName2.Text = "Malevolence downslam"
+
+-- Button 3
+local baseButton3 = hotbarFrame:FindFirstChild("3").Base
+local ToolName3 = baseButton3.ToolName
+ToolName3.Text = "Accursed Hand"
+
+-- Button 4
+local baseButton4 = hotbarFrame:FindFirstChild("4").Base
+local ToolName4 = baseButton4.ToolName
+ToolName4.Text = "Divergence!"
+
+local function waitForGui()
+    local player = game.Players.LocalPlayer
+    local playerGui = player:WaitForChild("PlayerGui")
+    
+    while true do
+        local screenGui = playerGui:FindFirstChild("ScreenGui")
+        if screenGui then
+            local magicHealthFrame = screenGui:FindFirstChild("MagicHealth")
+            if magicHealthFrame then
+                local textLabel = magicHealthFrame:FindFirstChild("TextLabel")
+                if textLabel then
+                    textLabel.Text = "ENRAGED"
+                    return
+                end
+            end
+        end
+        wait(1)
+    end
+end
+
+waitForGui()
